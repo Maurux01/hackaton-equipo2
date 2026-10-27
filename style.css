@@ -19,10 +19,11 @@
    Fondo del cuerpo (imagen local)
    ----------------------------------------- */
 body {
-  background: 
+  /* background: 
     linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-    url("IMG/background.jpg") center/cover no-repeat fixed;
+    url("IMG/background.jpg") center/cover no-repeat fixed; */
   color: var(--ink);
+  background-color: #555;
   font-family: "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", YuGothic, sans-serif;
   margin: 0;
 }
@@ -513,7 +514,6 @@ h2::after {
   left: 0;
   width: 50%;
   height: 4px;
-  background: var(--jap-red);
   border-radius: 2px;
 }
 
