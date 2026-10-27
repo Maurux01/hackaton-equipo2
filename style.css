@@ -371,6 +371,12 @@ h2#platos,
   width: 100%;
 }
 
+li.vacio {
+  grid-column: 1 / -1; /* Ocupa desde la primera hasta la última columna del grid */
+  list-style: none;
+  width: 100%;
+}
+
 /* Carrito centrado */
 #carrito {
   text-align: center;

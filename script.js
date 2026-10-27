@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </li>`;
     }
     if (html === "" && vistaActual === "favoritos") {
-      html = `<li class="vacio">No tienes productos favoritos todavía.</li>`;
+      html = `<li class="vacio text-white fs-3 py-4 text-center w-100">No tienes productos favoritos todavía.</li>`;
     }
     menu.innerHTML = html;
   }
