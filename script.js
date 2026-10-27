@@ -4,7 +4,7 @@ const productos = [
     nombre: "FUGU – Pez globo",
     descripcion:
       "El fugu contiene una toxina letal en algunos de sus órganos (hígado, ovarios…), y si no se le extraen estas partes con sumo cuidado, la persona que lo ingiere puede morir",
-    precio: 3500,
+    precio: 90000,
     imagen:
       "https://www.muyjapones.com/wp-content/uploads/2023/02/Fugu-en-sashimi.jpg",
   },
@@ -13,7 +13,7 @@ const productos = [
     nombre: "BASASHI",
     descripcion:
       "Es el sashimi de carne de caballo. Se sirve muy frío y dependiendo de su maduración, su color oscila de rosa a rojo oscuro.",
-    precio: 8500,
+    precio: 55000,
     imagen:
       "https://www.muyjapones.com/wp-content/uploads/2023/01/BASASHI-2.jpg",
   },
@@ -22,7 +22,7 @@ const productos = [
     nombre: "TOFUYO",
     descripcion:
       "Es un tofu fermentado que se prepara añadiéndole dos tipos de koji y awamori (bebida alcohólica típica de Okinawa)",
-    precio: 9000,
+    precio: 60000,
     imagen: "https://www.muyjapones.com/wp-content/uploads/2023/02/Tofuyo.jpg",
   },
   {
@@ -30,7 +30,7 @@ const productos = [
     nombre: "INAGO NO TSUKUDANI",
     descripcion:
       "Es un plato que se prepara con saltamontes, que se cocinan a fuego lento con salsa de soja y mirin. ",
-    precio: 4000,
+    precio: 30000,
     imagen:
       "https://www.muyjapones.com/wp-content/uploads/2023/02/INAGO-NO-TSUKUDANI-2.jpg",
   },
