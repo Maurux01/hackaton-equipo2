@@ -4,7 +4,8 @@ Una aplicación web que muestra una selección curada de platos japoneses único
 
 ## Preview
 
-> *(Agrega una captura de pantalla o GIF del proyecto aquí)*
+<img width="1898" height="2127" alt="imagen" src="https://github.com/user-attachments/assets/56282ad8-a566-42af-9e5b-ca7e2504eaba" />
+
 
 ## Características
 
