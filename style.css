@@ -1,0 +1,436 @@
+/* =========================================
+   Japfood — Japón antiguo
+   Rojo y blanco (bandera de Japón)
+   Enfoque: cards de productos y botones
+   ========================================= */
+
+/* Paleta */
+:root {
+  --jap-red: #BC002D;      /* rojo bandera Japón */
+  --jap-red-dark: #7A001E;
+  --jap-white: #FFFFFF;
+  --sakura: #F8C8DC;
+  --sakura-dark: #C98FA8;
+  --ink: #2B2B2B;          /* tinta sumi */
+  --gold: #C9A227;
+}
+
+/* -----------------------------------------
+   Fondo del cuerpo (imagen local)
+   ----------------------------------------- */
+body {
+  background: var(--jap-white)
+    url("IMG/background.jpg") center/cover no-repeat fixed;
+  color: var(--ink);
+  font-family: "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", YuGothic, sans-serif;
+  margin: 0;
+}
+
+/* -----------------------------------------
+   CARDS — productos (estilo tarjeta)
+   ----------------------------------------- */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+}
+
+li.producto {
+  background: var(--jap-white);
+  border: 3px solid var(--jap-red);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(188, 0, 45, 0.18);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Círculo sol japonés en la esquina de la card */
+li.producto::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 80px;
+  height: 80px;
+  background: var(--jap-red);
+  border-radius: 50%;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+li.producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(188, 0, 45, 0.35);
+  border-color: var(--jap-red-dark);
+}
+
+li.producto h3 {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 1.05rem;
+  color: var(--jap-red);
+  z-index: 1;
+  position: relative;
+}
+
+.imagen-producto {
+  width: 100%;
+  max-width: 210px;
+  height: 170px;
+  border-radius: 14px;
+  border: 3px solid var(--jap-red);
+  margin: 0.6rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+li.producto:hover .imagen-producto img {
+  transform: scale(1.08);
+}
+
+li.producto p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0.4rem 0;
+  line-height: 1.5;
+  z-index: 1;
+  position: relative;
+}
+
+.precio {
+  display: block;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--jap-red-dark);
+  margin-top: 0.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* -----------------------------------------
+   Contenedor de botones de la card
+   (para que Agregar y Favorito queden al lado)
+   ----------------------------------------- */
+.acciones {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(188, 0, 45, 0.15);
+  width: 100%;
+}
+
+/* -----------------------------------------
+   BOTONES
+   ----------------------------------------- */
+.btn-agregar,
+.btn-favorito,
+.btn-quitar {
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
+/* Agregar — blanco con acento rojo (bandera) */
+.btn-agregar {
+  background: var(--jap-white);
+  color: var(--jap-red);
+  border: 2px solid var(--jap-red);
+  padding: 0.85rem 1.4rem;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+.btn-agregar:hover {
+  background: var(--jap-red);
+  color: var(--jap-white);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(188, 0, 45, 0.25);
+}
+
+.btn-agregar:active {
+  transform: translateY(0);
+}
+
+/* Favorito — corazón sakura / rojo (tamaño fijo para no explotar) */
+.btn-favorito {
+  background: var(--sakura);
+  color: var(--sakura-dark);
+  border: 2px solid var(--sakura-dark);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.btn-favorito:hover {
+  background: var(--jap-red);
+  color: var(--jap-white);
+  border-color: var(--jap-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(188, 0, 45, 0.3);
+}
+
+/* Quitar — rojo bandera */
+.btn-quitar {
+  background: var(--jap-red);
+  color: var(--jap-white);
+  padding: 0.65rem 1.3rem;
+}
+
+.btn-quitar:hover {
+  background: var(--jap-red-dark);
+  transform: translateY(-2px);
+}
+
+/* Contenedor de botones de vista centrado */
+.vistas {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botones de vista: Toda la carta / Favoritos */
+#ver-todo,
+#ver-favoritos {
+  background: var(--jap-white);
+  color: var(--ink);
+  border: 2px solid var(--jap-red);
+  border-radius: 30px;
+  padding: 0.55rem 1.4rem;
+  margin: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#ver-todo.activa,
+#ver-favoritos.activa {
+  background: var(--jap-red);
+  color: var(--jap-white);
+  border-color: var(--jap-red-dark);
+  box-shadow: 0 0 0 4px rgba(188, 0, 45, 0.3);
+}
+
+/* -----------------------------------------
+   Footer — patrón nubes orientales (imagen local)
+   ----------------------------------------- */
+footer {
+  background: var(--jap-red)
+    url("IMG/footer.jpg") center/cover no-repeat;
+  color: var(--jap-white);
+  padding: 3rem 0 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(188, 0, 45, 0.8);
+  z-index: 0;
+}
+
+footer > *,
+footer h5,
+footer p,
+footer address,
+footer a {
+  position: relative;
+  z-index: 1;
+  color: var(--jap-white) !important;
+}
+
+footer a {
+  color: #ffe8e8;
+  text-decoration: underline;
+}
+
+/* -----------------------------------------
+   Nav rojo estilo footer
+   ----------------------------------------- */
+.navbar-jap {
+  background: var(--jap-red)
+    url("IMG/footer.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.navbar-jap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(188, 0, 45, 0.85);
+  z-index: 0;
+}
+
+.navbar-jap .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-jap .navbar-brand {
+  color: var(--jap-white) !important;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar-jap .nav-link {
+  color: var(--jap-white) !important;
+  font-weight: 600;
+}
+
+.navbar-jap .nav-link:hover,
+.navbar-jap .nav-link.active {
+  color: #ffe8e8 !important;
+}
+
+.navbar-jap .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-jap .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Logo al lado izquierdo de Japfood */
+.logo-nav {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+/* -----------------------------------------
+   Letras más legibles sobre el fondo
+   ----------------------------------------- */
+body {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+h4, h5 {
+  color: var(--jap-red);
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: var(--ink);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: var(--jap-white);
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Centrar títulos principales junto con Platos */
+h2#platos,
+.carta h2 {
+  color: var(--jap-white);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 100%;
+}
+
+/* Carrito centrado */
+#carrito {
+  text-align: center;
+}
+
+#carrito h4 {
+  color: var(--jap-white);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+#carrito ul {
+  text-align: center;
+  padding: 0;
+  list-style: none;
+}
+
+#carrito ul li {
+  color: var(--jap-white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: block;
+}
+
+/* Títulos específicos en blanco para resaltar sobre el fondo */
+h2#platos,
+.carta h2 {
+  color: var(--jap-white);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Carrito — letras en blanco */
+#carrito h4 {
+  color: var(--jap-white);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+#carrito ul li {
+  color: var(--jap-white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 4px;
+  background: var(--jap-red);
+  border-radius: 2px;
+}
+
+li.producto h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.precio {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.vistas button {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}

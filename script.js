@@ -62,10 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="imagen-producto"><img src="${producto.imagen}"></div>
                   <p>${producto.descripcion}</p>
                   <span class="precio">${formatearPrecio(producto.precio)}</span>
-                  <button class="btn-agregar" data-id="${producto.id}"> Agregar</button>
-                  <button class="btn-favorito" data-id="${producto.id}" aria-label="${esFavorito ? "Quitar de favoritos" : "Agregar a favoritos"}">
-                    ${esFavorito ? "♥️" : "♡"}
-                  </button>
+                  <div class="acciones">
+                    <button class="btn-agregar" data-id="${producto.id}"> Agregar</button>
+                    <button class="btn-favorito" data-id="${producto.id}" aria-label="${esFavorito ? "Quitar de favoritos" : "Agregar a favoritos"}">
+                      ${esFavorito ? "♥️" : "♡"}
+                    </button>
+                  </div>
               </li>`;
     }
     if (html === "" && vistaActual === "favoritos") {

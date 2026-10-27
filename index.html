@@ -8,13 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="IMG/favicom.jpg">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-jap">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="IMG/logo.png" alt="Logo Japfood" class="logo-nav me-2">
+                    Japfood
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,16 +26,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#platos">Platos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="#carrito">Carrito</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="#footer" >Acerca de Nosotros</a>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +73,7 @@
             </div>
         </section>
         <!-- hacer modal para cambio de estado -->
-        <h2> Platos</h2>
+        <h2 id="platos"> Platos</h2>
         <!-- reemplazo por js en mostrarCarta()-->
         <!-- Carta: JavaScript la llena con los productos -->
         <section id="carta" class="carta">
@@ -92,21 +96,19 @@
 
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="container-fluid">
             <div class="row">
                 <h5> Sobre nosotros</h5>
-                <p> A begonia sees a cocktail as an uncouth color. Extending this logic, we can assume that any instance
-                    of a spear can be construed as a phlegmy tendency. Passives are unfenced waves. Recent controversy
-                    aside, before twines, descriptions were only ornaments</p>
+                <p> Somos un restaurante en comida japonesa, tenemos platos nuevos e innovadores, asi como tipicos de las regiones del pais del sol naciente.</p>
                 <div class="col">
                     <h5>Contactanos</h5>
                     <address>
-                        <strong>Your Company Name</strong><br>
+                        <strong>Japfood</strong><br>
                         123 Business Road, Suite 100<br>
-                        City, State, Zip Code<br><br>
+                        Okinawa, Okinawa city, 904-0001<br><br>
                         Phone: <a href="tel:+11234567890">(123) 456-7890</a><br>
-                        Email: <a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                        Email: <a href="mailto:info@yourdomain.com">japfood@gmail.com</a>
                     </address>
                 </div>
             </div>
