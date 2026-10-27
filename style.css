@@ -19,7 +19,8 @@
    Fondo del cuerpo (imagen local)
    ----------------------------------------- */
 body {
-  background: var(--jap-white)
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
     url("IMG/background.jpg") center/cover no-repeat fixed;
   color: var(--ink);
   font-family: "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", YuGothic, sans-serif;
@@ -392,6 +393,99 @@ h2#platos,
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: block;
+}
+
+/* Carousel — reset total: cero rojo, cero bordes, cero sombras */
+#carouselExampleFade,
+#carouselExampleFade *,
+#carouselExampleFade ::before,
+#carouselExampleFade ::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+#carouselExampleFade .carousel-indicators {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#carouselExampleFade .carousel-indicators button,
+#carouselExampleFade .carousel-indicators [data-bs-target] {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#carouselExampleFade .carousel-inner {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+#carouselExampleFade .carousel-item {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  backface-visibility: hidden !important;
+}
+
+#carouselExampleFade .carousel-item img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  backface-visibility: hidden !important;
+}
+
+#carouselExampleFade .carousel-control-prev,
+#carouselExampleFade .carousel-control-next {
+  width: auto !important;
+  opacity: 1 !important;
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  color: #fff !important;
+}
+
+#carouselExampleFade .carousel-control-prev-icon,
+#carouselExampleFade .carousel-control-next-icon {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  font-size: 2.5rem !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6) !important;
+}
+
+#carouselExampleFade .carousel-control-prev-icon::before {
+  content: "<" !important;
+  color: #fff !important;
+}
+
+#carouselExampleFade .carousel-control-next-icon::before {
+  content: ">" !important;
+  color: #fff !important;
 }
 
 /* Títulos específicos en blanco para resaltar sobre el fondo */
