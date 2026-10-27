@@ -1,11 +1,10 @@
-<!-- https://www.muyjapones.com/las-16-comidas-mas-extranas-en-japon/ -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Japfood</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
@@ -69,9 +68,24 @@
                 </button>
             </div>
         </section>
-        <section>
-            <h2> Platos</h2>
-            <p> </p>
+        <!-- hacer modal para cambio de estado -->
+        <h2> Platos</h2>
+        <!-- reemplazo por js en mostrarCarta()-->
+        <!-- Carta: JavaScript la llena con los productos -->
+        <section id="carta" class="carta">
+            <h2>La carta de hoy</h2>
+            <div class="vistas">
+                <button id="ver-todo" class="vista activa" type="button">Toda la carta</button>
+                <button id="ver-favoritos" class="vista" type="button">♥️ Favoritos (<span
+                        id="contador-favoritos">0</span>)</button>
+            </div>
+            <ul id="menu" class="menu"></ul>
+        </section>
+        <section id="carrito">
+            <h4> Tu pedido es: </h4>
+            <ul>
+                <li> </li>
+            </ul>
 
         </section>
 
