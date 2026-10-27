@@ -124,6 +124,18 @@ document.querySelector("#ver-favoritos").addEventListener("click", () => {
     mostrarCarta();
 });
 
+function quitarDelCarrito(id) {
+    const existe = carrito.find(item => item.id === id);
+    if (!existe) return;
+
+    if (existe.cantidad > 1) {
+        existe.cantidad--;
+    } else {
+        carrito = carrito.filter(item => item.id !== id);
+    }
+    renderizarCarrito();
+}
+
 function renderizarCarrito() {
     carritoLista.innerHTML = "";
 
@@ -133,7 +145,10 @@ function renderizarCarrito() {
 
         const li = document.createElement("li");
         const subtotal = producto.precio * item.cantidad;
-        li.textContent = `${producto.nombre} - ${formatearPrecio(producto.precio)} x ${item.cantidad} = ${formatearPrecio(subtotal)}`;
+        li.innerHTML = `
+            <span>${producto.nombre} - ${formatearPrecio(producto.precio)} x ${item.cantidad} = ${formatearPrecio(subtotal)}</span>
+            <button class="btn-quitar" data-id="${item.id}">Quitar</button>
+        `;
         carritoLista.appendChild(li);
     }
 
@@ -148,4 +163,13 @@ function renderizarCarrito() {
     carritoLista.appendChild(totalLi);
 }
 
-mostrarCarta();
+// Delegación de eventos en el carrito para quitar ítems
+carritoLista.addEventListener("click", (e) => {
+    const btnQuitar = e.target.closest(".btn-quitar");
+    if (btnQuitar) {
+        const id = parseInt(btnQuitar.dataset.id);
+        quitarDelCarrito(id);
+    }
+});
+
+
