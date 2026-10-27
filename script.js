@@ -35,18 +35,37 @@ const productos = [
       "https://www.muyjapones.com/wp-content/uploads/2023/02/INAGO-NO-TSUKUDANI-2.jpg",
   },
 ];
+//localStorage
+const CLAVE_CARRITO = "platos_carrito";
+const CLAVE_FAVORITOS = "platos_favorito"
+
+
 
 // Espera a que el DOM esté listo antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector("#menu");
   const carritoLista = document.querySelector("#carrito ul");
-  let carrito = [];
-  let favoritos = [];
+  let carrito = JSON.parse(localStorage.getItem(CLAVE_CARRITO)) || [];
+  let favoritos = JSON.parse(localStorage.getItem(CLAVE_FAVORITOS)) || [];
   let vistaActual = "todo";
 
 
+  const contadorFavs = document.querySelector("#contador-favoritos");
+  if (contadorFavs) {
+    contadorFavs.textContent = favoritos.length;
+  }
+
   function formatearPrecio(precio) {
     return "$" + precio.toLocaleString("es-CO");
+  }
+
+  // Funciones de localStorage
+  function guardarCarrito() {
+    localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
+  }
+
+  function guardarFavoritos() {
+    localStorage.setItem(CLAVE_FAVORITOS, JSON.stringify(favoritos));
   }
 
   function mostrarCarta() {
@@ -81,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       carrito.push({ id, cantidad: 1 });
     }
+    guardarCarrito();
     renderizarCarrito();
   }
 
@@ -91,7 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       favoritos.splice(index, 1);
     }
-    document.querySelector("#contador-favoritos").textContent = favoritos.length;
+    guardarFavoritos();
+    if (contadorFavs) {
+      contadorFavs.textContent = favoritos.length;
+    }
     mostrarCarta();
   }
 
@@ -136,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       carrito = carrito.filter((item) => item.id !== id);
     }
+    guardarCarrito();
     renderizarCarrito();
   }
 
@@ -176,7 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Inicializar: mostrar la carta y el carrito al cargar la página
+  mostrarCarta();
   renderizarCarrito();
 });
+
 
 
