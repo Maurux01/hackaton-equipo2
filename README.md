@@ -57,12 +57,12 @@ No se requieren pasos de compilación ni instalación de dependencias.
 
 | Miembro | Rol | LinkedIn | GitHub |
 |---------|-----|----------|--------|
-| Alexandra Del Valle | Frontend Developer | [LinkedIn](https://linkedin.com/in/alexandradelvalle) | [GitHub](https://github.com/alexandradelvalle) |
-| Mauro Infante | Frontend Developer | [LinkedIn](https://linkedin.com/in/mauro-infante) | [GitHub](https://github.com/Maurux01) |
-| Juan Andrés Bohórquez Acevedo | Frontend Developer | [LinkedIn](https://linkedin.com/in/juanandresbohorquezacevedo) | [GitHub](https://github.com/JuanAndresBohorquezAcevedo) |
-| Gabriela Hernández Martínez | Frontend Developer | [LinkedIn](https://linkedin.com/in/gabriela-hm) | [GitHub](https://github.com/gabriela-hm) |
+| Alexandra Del Valle | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/alexandra-vanessa-del-valle-aragon-desarrolladora-fullstack/) | [GitHub](https://github.com/alexandradelvalle) |
+| Mauro Infante | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/maurofelipe-infante/) | [GitHub](https://github.com/Maurux01) |
+| Juan Andrés Bohórquez Acevedo | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/juan-andr%C3%A9s-boh%C3%B3rquez-acevedo-dev/) | [GitHub](https://github.com/JuanAndresBohorquezAcevedo) |
+| Gabriela Hernández  | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/gabrielahernandez-developerfull-stack/) | [GitHub](https://github.com/gabriela-hm) |
 
-> Nota: Reemplaza las URLs de LinkedIn con los enlaces reales de los perfiles de cada integrante.
+
 
 ## Licencia
 
